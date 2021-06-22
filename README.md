@@ -31,6 +31,8 @@ Readarr is an ebook (and maybe eventually magazine/audiobook) collection manager
 This project exists thanks to all the people who contribute. [Contribute](CONTRIBUTING.md).
 <a href="https://github.com/Readarr/Readarr/graphs/contributors"><img src="https://opencollective.com/Readarr/contributors.svg?width=890&button=false" /></a>
 
+
+
 ## Backers
 
 Thank you to all our backers! 🙏 [Become a backer](https://opencollective.com/readarr#backer)
@@ -46,6 +48,133 @@ Support this project by becoming a sponsor. Your logo will show up here with a l
 ## Mega Sponsors
 <img src="https://opencollective.com/readarr/tiers/mega-sponsor.svg?width=890"></a>
 
+# How to Build from Source on Windows 10 WSL2
+
+First off i want to say thank you to reddit user u/Guinness for the starting point for CentOS non docker install. Sorry if this is not allowed. Please let me copy this to the appropriate section. I worked very hard on this and had to start over because i didnt save the original draft. I didn't see a flair for documentation so i apologize ahead of time.
+
+Secondly you Will need a couple of neccessary dependencies
+
+First if your on Windows 10 You need WSL2 and a Debian or Ubuntu Distro. You can look that up as this tutorial is for installing Readarr and not WSL. But everything in here should apply to both.
+
+# Setting up Dependencies:
+
+**IMPORTANT:** 
+
+**IM NOT SURE IF THIS IS APPLICABLE FOR EVERYONE I HAVE GENIE INSTALLED WHICH IS WSL2 EQUIVELANT TO SYSTEMD. I WOULD HIGH RECOMMEND INSTALLING IT**
+
+(I personally found the github genie documentation very frustrating and overwhelming)
+
+**Genie (WSL2 Systemd Alt.)**
+
+Please follow this tutorial posted [here](https://gist.github.com/djfdyuruiry/6720faa3f9fc59bfdf6284ee1f41f950)
+
+Once Done test it to make sure it is working
+
+    wsl genie -s 
+
+**Installing Git:**
+
+    sudo apt install git -y
+
+**Installing Curl:**
+
+    sudo apt install curl -y
+
+**Yarn Install:**
+
+Next We need to Install Yarn
+
+Way #1 PPA: **(RECOMMENDED)**
+
+    curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+    
+    echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+    
+    sudo apt update && sudo apt install yarn
+
+Way #2 **NPM (Recommended):**
+
+I personally dont like using NPM mainly because of how big the package is to download but if thats your cup of tea here you go!
+
+    npm install -g yarn
+
+Once you have installed using either method run the command below to check it.
+
+    yarn --version
+
+**Installing .NET 5 Runtime to only run Programs:**
+
+Run the Below Command if  you are using Ubuntu 20.04 Terminal:
+
+    wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+    
+    sudo dpkg -i packages-microsoft-prod.deb
+
+Install the SDK:
+
+    sudo apt-get update; \
+      sudo apt-get install -y apt-transport-https && \
+      sudo apt-get update && \
+      sudo apt-get install -y dotnet-sdk-5.0
+
+Install the Runtime:
+
+    sudo apt-get update; \
+      sudo apt-get install -y apt-transport-https && \
+      sudo apt-get update && \
+      sudo apt-get install -y aspnetcore-runtime-5.0
+
+FOR ALL OTHER PLEASE USE DOCUMENTATION HERE TO INSTALL ON ANY OTHER LINUX OPERSATING SYSTEM
+
+[Documentation for All Linux Install of .NET 5](https://docs.microsoft.com/en-us/dotnet/core/install/linux)
+
+Also I would recommend you install the Windows Native .NET 5.0 EXE at the below link
+
+[.NET 5 Windows Installers and Scripts](https://dotnet.microsoft.com/download/dotnet/5.0)
+
+&#x200B;
+
+**NOTE: YOU NEED TO INSTALL THE .NET SDK AND .NET RUNTIME FOR THIS TO WORK!**
+
+# Building Readarr:
+
+So if you are using WSL2 on Windows 10 you should open a new tab in Windows Terminal Windows in your Debian or Ubuntu based distro. 
+
+ie. Ubuntu 20.04
+
+**Directory Setup**
+
+it will most likely bring you to directory like this `/mnt/c/Users/(Your Windows Account)`
+
+Once in that directory we have to make a couple of new directories
+
+    sudo mkdir apps
+    
+    cd apps
+    
+    sudo mkdir build
+    
+    cd build
+
+**Gitcloning the Repo**
+
+     git clone https://github.com/Readarr/Readarr
+
+**Running the Build:**
+
+We first need to navigate inside the build directory to the Readarr directory that just pulled from github
+
+    cd readarr
+
+Now check to see if the build.sh is in the Readarr directory
+
+    ls
+
+If it is now run the build
+
+    bash build.sh
+
+&#x200B;
 ### License
 
 * [GNU GPL v3](http://www.gnu.org/licenses/gpl.html)

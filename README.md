@@ -1,6 +1,6 @@
 # IMPORTANT!
 
-**I am not the owner of the app Readarr. Please send all bug requests and anything else that is a direct app non building issue to the people below or at**
+**I am not the owner of the app Readarr. Please send all bug requests and anything else that is a direct app non building issue or process of building to the people below or at**
 
 [Official Readarr Github](https://github.com/Readarr/Readarr)
 

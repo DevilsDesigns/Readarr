@@ -1,9 +1,12 @@
 # IMPORTANT!
 
-**I am not the owner of the app Readarr. Please send all bug requests and anything else that is a direct app non building issue or process of building to the people below or at**
+**I am not the Readarr Developer. I will try my best to fix all bug requests in a timely manner.**
+**THIS BUILD IS NOT AN OFFICIAL READARR BUILD. I AM BUILDING THESE OFF THE GITHUB BELOW**
 
 [Official Readarr Github](https://github.com/Readarr/Readarr)
 
+**BY GITCLONING**
+**I WILL ATTEMPT TO FIX THESE BUGS IN A TIMELY MANNER. IF YOU WANT SOMETHING MORE STABLE PLEASE DOWNLOAD THE OFFICIAL READARR APP THAT WERE CREATED BY THEM AT THE ABOVE GITHUB**
 # Readarr
 [![Build Status](https://dev.azure.com/Readarr/Readarr/_apis/build/status/Readarr.Readarr?branchName=develop)](https://dev.azure.com/Readarr/Readarr/_build/latest?definitionId=1&branchName=develop)
 [![Docker Pulls](https://img.shields.io/docker/pulls/hotio/readarr)](https://hub.docker.com/r/hotio/readarr)

@@ -1,5 +1,10 @@
-# Readarr
+# IMPORTANT
 
+**I am not the owner of the app Readarr. Please send all bug requests and anything else that is a direct app non building issue to the people below or at**
+
+[Official Readarr Github](https://github.com/Readarr/Readarr)
+
+# Readarr
 [![Build Status](https://dev.azure.com/Readarr/Readarr/_apis/build/status/Readarr.Readarr?branchName=develop)](https://dev.azure.com/Readarr/Readarr/_build/latest?definitionId=1&branchName=develop)
 [![Docker Pulls](https://img.shields.io/docker/pulls/hotio/readarr)](https://hub.docker.com/r/hotio/readarr)
 [![Backers on Open Collective](https://opencollective.com/readarr/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/readarr/sponsors/badge.svg)](#sponsors)
@@ -48,17 +53,18 @@ Support this project by becoming a sponsor. Your logo will show up here with a l
 ## Mega Sponsors
 <img src="https://opencollective.com/readarr/tiers/mega-sponsor.svg?width=890"></a>
 
-# How to Build from Source on Windows 10 WSL2
+
+&#x200B;
 
 First off i want to say thank you to reddit user u/Guinness for the starting point for CentOS non docker install. Sorry if this is not allowed. Please let me copy this to the appropriate section. I worked very hard on this and had to start over because i didnt save the original draft. I didn't see a flair for documentation so i apologize ahead of time.
 
 Secondly you Will need a couple of neccessary dependencies
 
-First if your on Windows 10 You need WSL2 and a Debian or Ubuntu Distro. You can look that up as this tutorial is for installing Readarr and not WSL. But everything in here should apply to both.
+First if you are on Windows 10 You need WSL2 and a Debian or Ubuntu Distro. You can look that up as this tutorial is for installing Readarr and not WSL. But everything in here should apply to both.
 
 # Setting up Dependencies:
 
-**IMPORTANT:** 
+**IMPORTANT:**
 
 **IM NOT SURE IF THIS IS APPLICABLE FOR EVERYONE I HAVE GENIE INSTALLED WHICH IS WSL2 EQUIVELANT TO SYSTEMD. I WOULD HIGH RECOMMEND INSTALLING IT**
 
@@ -138,7 +144,7 @@ Also I would recommend you install the Windows Native .NET 5.0 EXE at the below 
 
 # Building Readarr:
 
-So if you are using WSL2 on Windows 10 you should open a new tab in Windows Terminal Windows in your Debian or Ubuntu based distro. 
+So if you are using WSL2 on Windows 10 you should open a new tab in Windows Terminal Windows in your Debian or Ubuntu based distro.
 
 ie. Ubuntu 20.04
 
@@ -172,7 +178,33 @@ Now check to see if the build.sh is in the Readarr directory
 
 If it is now run the build
 
+If you want to build all Windows, Linux, and MacOS run below
+
     bash build.sh
+
+Now go to the subfolder and collect the outputs if your on Windows using WSL2 you can just go to 
+
+`C:\Users\(YourWindowsUser)\apps\build\Readarr_output\`
+
+and select the latest netx.x folder for example below mine is net5.0
+
+ie.  `/mnt/c/Users/DemonWarrior/apps/build/Readarr/_output/net5.0`
+
+Inside that folder you will have all the built files to run on any system.
+
+ie. `C:\Users\DemonWarrior\apps\build\Readarr\_output\net5.0\win-x64\publish`
+
+Once you have this folder you can either move it to another destination anywhere on the OS.
+
+I have copied mine to `C:\Tools\\Readarr`
+
+then execute inside the folder you moved it to for example on Windows 10 x64 I ran ServiceInstall.exe as an administrator and now the service for Readarr on Windows 10 x64 is installed.
+
+You can also run Readarr.console.exe as a service using NSSM
+
+Enjoy and Rejoice!
+
+If anyone is too lazy to do this i have already uploaded the pre-built working folders for the different Operating systems on the releases.
 
 &#x200B;
 ### License
